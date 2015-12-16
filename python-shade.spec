@@ -1,5 +1,5 @@
 %if 0%{?fedora}
-%global with_python3 1
+%global with_python3 0
 %endif
 %{!?python2_shortver: %global python2_shortver %(%{__python2} -c 'import sys; print("%s.%s" % (sys.version_info.major,sys.version_info.minor))')}
 %{!?python3_shortver: %global python3_shortver %(%{__python3} -c 'import sys; print("%s.%s" % (sys.version_info.major,sys.version_info.minor))')}
@@ -7,7 +7,7 @@
 
 Name:           python-%{srcname}
 Version:        1.0.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Python module for operating OpenStack clouds
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/shade
@@ -122,5 +122,5 @@ ln -s shade-inventory-%{python2_shortver} \
 %endif
 
 %changelog
-* Wed Oct 28 2015 Lars Kellogg-Stedman <lars@redhat.com> - 1.0.0-2
+* Wed Oct 28 2015 Lars Kellogg-Stedman <lars@redhat.com> - 1.0.0-3
 - initial package
